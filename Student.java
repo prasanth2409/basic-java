@@ -1,63 +1,67 @@
-import java.util.*;
-public class Student {
-	Scanner scn=new Scanner(System.in);
-	static String collageName;
-	static String collageAdd;
-	String name;
-	int sid;
-	int age;
-	String phoneNo;
-	String gender;
-	public void setdata()
-	{
-		System.out.println("Please enter the student name ");
-		name=scn.nextLine();
-		System.out.println("Please enter the student id ");
-		sid=scn.nextInt();
-		System.out.println("Please enter the student Age ");
-		age=scn.nextInt();
-		System.out.println("Please enter the student Gender ");
-		gender=scn.next();
-		System.out.println("Please enter the student Phone Number ");
-		phoneNo=scn.next();
-	}
-	public static void changeCollageName()
-	{
-		Scanner scn=new Scanner(System.in);
-		System.out.println("Please enter the collage name ");
-		collageName=scn.nextLine();
-		
-	}
-	public static void changeCollageAdd()
-	{
-		Scanner scn=new Scanner(System.in);
-		System.out.println("Please enter the collage Address ");
-		collageAdd=scn.nextLine();
-		
-	}
-	
-	public void showdata() {
-		System.out.println("Collage Name = "+collageName);
-		System.out.println("Collage Address = "+collageAdd);
-		System.out.println("Student Name = "+name);
-		System.out.println("Student ID = "+sid);
-		System.out.println("Student Age = "+age);
-		System.out.println("Gender = "+gender);
-		System.out.println("Phone Number = "+phoneNo);
-	}
-	public static void main(String [] args)
-		{
-			Student s1=new Student();
-			Student s2=new Student();
-			Student.changeCollageName();
-			Student.changeCollageAdd();
-			s1.setdata();
-			s1.showdata();
-			s2.setdata();
-			s2.showdata();
-			
-			
-		}
-	}
-	
+package demo;
 
+class Student {
+	int Sid;
+	String Sname;
+	int Age;
+	String gender;
+	String phno;
+	static String collegeName;
+	static String collegeAddress;
+
+public void addStudents(int id,String name,int Sage,String gen,String phone) {
+	Sid=id;
+	Sname=name;
+	Age=Sage;
+	gender=gen;
+	phno=phone;
+	
+}
+public void displayStudentsDetails() {
+	System.out.println(Sid);
+	System.out.println(Sname);
+	System.out.println(Age);
+	System.out.println(gender);
+	System.out.println(phno);
+	System.out.println(collegeName);
+	System.out.println(collegeAddress);
+	System.out.println("******************************");
+}
+public static void changeCollegeAddress (String Address)
+{
+	collegeAddress=Address;
+}
+public static void changeCollegeName(String Name) 
+{
+	collegeName=Name;
+}
+public static void main(String[] args) 
+	{
+		Student.collegeName="JSP";
+		Student.collegeAddress="OAR";
+		Student s1=new Student();
+		
+		
+		s1.addStudents(1,"gun", 22, "MALE", "9876543219");
+		s1.displayStudentsDetails();
+		
+		Student s2=new Student();
+		
+		s2.addStudents(2, "bun", 21, "MALE", "1234567890");
+		s2.displayStudentsDetails();
+		
+		Student.collegeAddress="MARATHALLI";
+		
+		s1.displayStudentsDetails();
+		s2.displayStudentsDetails();
+		
+		
+		Student.collegeName="JSPIDER";
+		
+				
+		s1.displayStudentsDetails();
+		s2.displayStudentsDetails();
+
+	}
+
+}
