@@ -1,0 +1,64 @@
+import java.util.*;
+public class Student {
+	Scanner scn=new Scanner(System.in);
+	static String collageName;
+	static String collageAdd;
+	String name;
+	int sid;
+	int age;
+	String phoneNo;
+	String gender;
+	public void setdata()
+	{
+		System.out.println("Please enter the student name ");
+		name=scn.nextLine();
+		System.out.println("Please enter the student id ");
+		sid=scn.nextInt();
+		System.out.println("Please enter the student Age ");
+		age=scn.nextInt();
+		System.out.println("Please enter the student Gender ");
+		gender=scn.next();
+		System.out.println("Please enter the student Phone Number ");
+		phoneNo=scn.next();
+	}
+	public static void changeCollageName()
+	{
+		Scanner scn=new Scanner(System.in);
+		System.out.println("Please enter the collage name ");
+		collageName=scn.nextLine();
+		
+	}
+	public static void changeCollageAdd()
+	{
+		Scanner scn=new Scanner(System.in);
+		System.out.println("Please enter the collage Address ");
+		collageAdd=scn.nextLine();
+		
+	}
+	
+	public void showdata() {
+		System.out.println("Collage Name = "+collageName);
+		System.out.println("Collage Address = "+collageAdd);
+		System.out.println("Student Name = "+name);
+		System.out.println("Student ID = "+sid);
+		System.out.println("Student Age = "+age);
+		System.out.println("Gender = "+gender);
+		System.out.println("Phone Number = "+phoneNo);
+	}
+	public static void main(String [] args)
+		{
+			Student s1=new Student();
+			Student s2=new Student();
+			Student.changeCollageName();
+			Student.changeCollageAdd();
+			s1.setdata();
+			s1.showdata();
+			s2.setdata();
+			s2.showdata();
+			
+			
+		}
+	}
+	
+
+}
